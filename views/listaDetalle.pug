@@ -1,0 +1,65 @@
+extends layout
+
+block scripts
+
+block content
+
+    a(href=`/todo` style="top:5px; left:5px; z-index:100;")
+                    p.btn.btn-dark volver
+
+    div(class="row m-1")
+        div(style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3 " id="containTable")
+            div(class="text-center")
+                h1 Lista: #{lista.titulo}
+            table(class="table table-striped table-bordered nowrap hover m-1" style="width:100%" id="tablaListaDetalle")
+                thead
+                    tr
+                        th id
+                        th titulo
+                        th fecha creacion
+                        th fecha resolucion
+                        th descrip
+                        th prioridad
+                        th fecha limite
+                        th estado
+                        th borrar
+                tbody    
+                    each item in items
+                        tr 
+                            td= item.id
+                            td= item.titulo
+                            td= item.fechaCreacion
+                            td= item.fechaResolucion
+                            td= item.descripcion
+                            td= item.prioridad
+                            td= item.fechaLimite
+                            td= item.estado       
+                            td
+                                form(action=`/todo/listas?_method=PUT`,method="post")
+                                    input(type="hidden" name="id" value=`${item.id}`)
+                                    input(type="submit" value="Borrar" class="btn btn-danger") 
+
+    div(class="m-1 row justify-content-center")
+        div(id="forms" class="col-lg-4 col-md-5 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light border m-1")
+            div(class="text-center")
+                h3 Editar lista
+
+            form( action=`/todo/editar/lista?_method=PUT` method="post")
+                .form-group 
+                    label Titulo: #{lista.titulo}
+                .form-group 
+                    label Fecha creacion: #{lista.fechaCreacion}
+                .form-group 
+                    label Fecha resolucion: #{lista.fechaResolucion}
+                .form-group 
+                    label Estado Actual: #{lista.estado}.
+                .form-group
+                    label Nuevo Estado: 
+                        select(name="estado" id="item").form.form-control
+                            option(value="sin resolver") SIN RESOLVER 
+                            option(value="resuelta") RESUELTA
+                            input(type="hidden" name="id" value=`${lista.id}`)
+                .form-group 
+                    button(id="submit" type="submit") 
+                        span Editar   
+

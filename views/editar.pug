@@ -1,0 +1,40 @@
+extends layout
+
+block scripts
+
+block content
+
+    a(href=`/todo` style="top:5px; left:5px; z-index:100;")
+                    p.btn.btn-dark volver
+
+
+    div(class="m-1 row justify-content-center py-5 h-100")
+        div(id="forms" class="col-lg-4 col-md-5 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light border m-1")
+            div(class="text-center")
+                h3 vista de edicion
+
+            form(action=`/todo/editar?_method=PUT` method="post")
+                .form-group 
+                label Item: #{item.titulo}
+                .form-group 
+                label Fecha creacion: #{item.fechaCreacion}
+                .form-group 
+                label Fecha resolucion: #{item.fechaResolucion}
+                .form-group 
+                label Descripcion: #{item.descripcion}
+                .form-group 
+                label Prioridad: #{item.prioridad}
+                .form-group 
+                label Fecha limite: #{item.fechaLimite}
+                .form-group 
+                label Estado Actual: #{item.estado}.
+                .form-group
+                label Nuevo Estado: 
+                    select(name="estado" id="estadoItemEditado").form.form-control
+                        option(value="sin resolver") SIN RESOLVER 
+                        option(value="resolviendo") RESOLVIENDO
+                        option(value="resuelta") RESUELTA
+                        input(type="hidden" name="id" value=`${id}`)
+                .form-group 
+                    button(id="submitEdit" type="submit") 
+                        span Editar  

@@ -1,0 +1,33 @@
+{
+  "name": "todo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bootstrap-icons": "^1.9.1",
+    "cookie-parser": "~1.4.6",
+    "debug": "~4.3.4",
+    "express": "~4.18.2",
+    "express-session": "^1.17.3",
+    "http-errors": "~2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "morgan": "~1.10.0",
+    "mysql2": "^2.3.3",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
+    "passport-local": "~1.0.0",
+    "pug": "3.0.2",
+    "sequelize": "^6.25.3",
+    "socket-io": "^1.0.0",
+    "socket.io": "^4.5.3",
+    "sweetalert2": "^11.6.8"
+  }
+}

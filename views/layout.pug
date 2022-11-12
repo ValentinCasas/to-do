@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    title= title
+
+    script(src="//cdn.jsdelivr.net/npm/sweetalert2@11")
+    script(src="/sweetAlert.js" defer)
+
+    link(rel="stylesheet" href="/style.css")
+    script(language="JavasCript" src="/js.js" defer) 
+
+    script(src="/socket.io/socket.io.js" charset="utf-8")
+
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css")
+
+
+    script(src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous")
+
+    link(rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css")
+
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css")
+    link(rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.4/css/fixedHeader.bootstrap.min.css")
+    link(rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css")
+
+    script(src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ) 
+    script(src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ) 
+    script(src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap.min.js" ) 
+    script(src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js" ) 
+    script(src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js" ) 
+    script(src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js" ) 
+
+    script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous")
+    script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous")
+
+
+    script(defer).
+      $(document).ready( function () {
+        $('#tablaItems').DataTable({
+        responsive: true,
+        });
+      } );
+
+      $(document).ready( function () {
+        $('#tablaListas').DataTable({
+          responsive: true,
+        });
+      } );
+
+      $(document).ready( function () {
+        $('#tablaListaDetalle').DataTable({
+        responsive: true,
+        });
+      } );
+
+      $(document).ready( function () {
+        $('#tablaListaItem').DataTable({
+        responsive: true,
+        });
+      } );
+
+    block scripts
+  body(style="font-family:Cambria, Georgia, serif; ")
+    block content

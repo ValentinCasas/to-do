@@ -1,0 +1,205 @@
+extends layout
+
+block scripts
+
+block content
+
+    
+  
+    nav
+        a(href=`/auth/logout`).btn.btn-dark.text-light
+            i Cerrar sesion
+        details(class="mt-2").btn.btn-dark.text-light
+            summary 
+                i Detalles usuario
+            p id: #{users[0].id}
+            p nombre: #{users[0].nombre}
+            p mail: #{users[0].mail}
+            p password: #{users[0].password}  
+
+    div(id="prueba")
+     p(style="color:#fff;") sin tareas asignadas por el momento
+
+    div(id="prueba2")
+     p(style="color:#fff;") nadie resolvio ninguna tarea por el momento
+
+    div(style="width:100%; height:20px; color:white; margin:-5px; ")
+        div(class="text-center")
+            h3 
+                i ¡ Bienvenido #{users[0].nombre} !
+
+
+    div(class="m-1 row justify-content-center py-5 h-100" id="card-container")
+        div(id="forms" class="col-lg-4 col-md-5 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light m-1")
+            div(class="text-center")
+                h3 Crear Tarea #{nombre} 
+
+            form(action="/todo" method="post")
+                .form-group
+                    label Titulo
+                    input.form.form-control(type="text" name="titulo" id="titulo" )
+                    input(type="hidden" name="idDuenio" value=`${users[0].id}` )
+                .form-group  
+                    label Descripcion
+                    input.form.form-control(type="text" name="descripcion" id="descripcion" )
+                .form-group
+                    label Prioridad
+                    select(name="prioridad" id="item").form.form-control
+                        option(value="baja") BAJA
+                        option(value="media") MEDIA
+                        option(value="alta") ALTA
+                .form-group
+                    label Fecha limite
+                    input.form.form-control(type="date" name="fechaLimite" id="fechaLimite" )
+                .form-group 
+                    label Estado
+                    select(name="estado" id="estado").form.form-control
+                        option(value="sin resolver") SIN RESOLVER 
+                        option(value="resolviendo") RESOLVIENDO
+                        option(value="resuelta") RESUELTA
+                .form-group 
+                    label Asignar
+                    select(name="receptor" id="receptor" autofocus).form.form-control
+                        option(value=`${users[0].id}` autofocus) Para mi
+                        each user in todoUsers
+                            if user.nombre != users[0].nombre 
+                                option(value=`${user.id}` autofocus) #{user.nombre} 
+                .form-group 
+                    button(id="submit" type="submit") 
+                        span Agregar 
+
+        div(id="forms" class="col-lg-3 col-md-5 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light m-1")
+            div(class="text-center")
+                h3 Crear Lista
+
+            form(action="/todo/agregarLista" method="post")
+                .form-group
+                    label Titulo
+                    input.form.form-control(type="text" name="titulo" id="item" )
+                    input.form.form-control(type="hidden" name="userId" id="item" value=`${users[0].id}`)
+                .form-group
+                    label Categoria
+                    input.form.form-control(type="text" name="categoria" id="categoria" )    
+                .form-group 
+                    label Estado
+                    select(name="estado" id="item").form.form-control
+                        option(value="sin resolver") SIN RESOLVER 
+                        option(value="resuelta") RESUELTA
+                .form-group 
+                    button(id="submit" type="submit") 
+                        span Agregar  
+
+        div(id="forms" class="col-lg-4 col-md-10 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light  m-1")
+            div(class="text-center")
+                h3 Agregar tarea a lista 
+
+            form(action="/todo/enlistar/item" method="post")
+
+                .form-group
+                    label Tarea
+                    select(name="idItem" id="item").form.form-control
+                        each item in items
+                            option(value=`${item.id}`) #{item.titulo}
+
+                .form-group
+                    label Lista
+                    select(name="idLista" id="item").form.form-control
+                        each lista in listas
+                            option(value=`${lista.id}`) #{lista.titulo}
+
+                .form-group 
+                    button(id="submit" type="submit") 
+                        span Agregar  
+
+
+    div(class="row m-1")
+        div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
+            div(class="text-center")
+                h3 ITEMS 
+            table( class=" table table-striped table-bordered nowrap hover " width="100%" id="tablaItems")
+                thead
+                    tr
+                        th id
+                        th titulo
+                        th creacion
+                        th resolucion
+                        th descrip
+                        th prioridad
+                        th fecha limite
+                        th estado
+                        th ver en lista
+                        th editar
+                        th borrar
+                tbody    
+                    each item in items
+                        tr 
+                            td= item.id
+                            td= item.titulo
+                            td= item.fechaCreacion
+                            td= item.fechaResolucion
+                            td= item.descripcion
+                            td= item.prioridad
+                            td= item.fechaLimite
+                            td= item.estado
+                            td
+                                a(href=`todo/titulo/${item.id}/lista`)
+                                    p.btn.btn-dark lista
+                            td
+                                a(href=`todo/titulo/${item.id}/editar`)
+                                    p.btn.btn-dark editar          
+                            td
+                                form(action=`todo/item/${item.id}?_method=DELETE`,method="post")
+                                    input(type="submit" value="Borrar" class="btn btn-danger")
+
+
+        div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
+            div(class="text-center ")
+                h3 LISTAS
+            table(class="table table-striped table-bordered nowrap hover m-1" style="width:100%" id="tablaListas")
+                thead
+                    tr
+                        th id
+                        th titulo
+                        th creacion
+                        th resolucion
+                        th estado
+                        th categoria
+                        th ver
+                        th editar
+                        th borrar
+                tbody    
+                    each lista in listas
+                        tr 
+                            td= lista.id
+                            td= lista.titulo
+                            td= lista.fechaCreacion
+                            td= lista.fechaResolucion
+                            td= lista.estado
+                            td= lista.categoria
+                            td
+                                a(href=`todo/${lista.id}/lista`)
+                                    p.btn.btn-dark  entrar
+                            td
+                                a(href=`todo/${lista.id}/lista`)
+                                    p.btn.btn-dark editar         
+                            td
+                                form(action=`todo/lista/${lista.id}?_method=DELETE`,method="post")
+                                    input(type="submit" value="Borrar" class="btn btn-danger")
+
+
+
+    div(class="text-center" style="color:#fff")
+        h3 Chat grupal en tiempo real!
+
+    div(id="chat-container")
+        div(id="chat-window")
+            div(id="output") 
+            div(id="actions") 
+        input(type="hidden" id="username" placeholder="Username" value=`${users[0].nombre}`)
+        input(type="text" id="message" placeholder="Message")
+        button(id="send") 
+            span SEND
+
+    button(id="submit" onclick="location.href='/admin/gestionListas'") 
+        span Gestion Listas
+

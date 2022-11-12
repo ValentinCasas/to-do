@@ -1,0 +1,46 @@
+extends layout
+
+block scripts
+
+block content
+
+
+    a(href=`/todo`)
+        p.btn.btn-dark volver 
+
+
+    div(class="row m-1")
+        div(style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3 " id="containTable" )
+            div(class="text-center")
+                h3 Vista ADMIN  
+                h3 LSITAS 
+            table( class=" table table-striped table-bordered nowrap hover " width="100%" id="tablaItems")
+                thead
+                    tr
+                        th id
+                        th titulo
+                        th creacion
+                        th resolucion
+                        th estado
+                        th categoria
+                        th ver
+                        th editar
+                        th borrar
+                tbody    
+                    each lista in listas
+                        tr 
+                            td= lista.id
+                            td= lista.titulo
+                            td= lista.fechaCreacion
+                            td= lista.fechaResolucion
+                            td= lista.estado
+                            td= lista.categoria
+                            td
+                                a(href=`/admin/${lista.id}/lista`)
+                                    p.btn.btn-dark  entrar
+                            td
+                                a(href=`/admin/${lista.id}/lista`)
+                                    p.btn.btn-dark editar         
+                            td
+                                form(action=`/todo/lista/${lista.id}?_method=DELETE`,method="post")
+                                    input(type="submit" value="Borrar" class="btn btn-danger")

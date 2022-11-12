@@ -1,0 +1,211 @@
+body {
+  background-color: #261016;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23261016' width='11' height='11'/%3E%3Crect fill='%23281217' x='10' width='11' height='11'/%3E%3Crect fill='%232b1419' y='10' width='11' height='11'/%3E%3Crect fill='%232d161a' x='20' width='11' height='11'/%3E%3Crect fill='%232f181c' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%2332191d' y='20' width='11' height='11'/%3E%3Crect fill='%23341b1e' x='30' width='11' height='11'/%3E%3Crect fill='%23371d20' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23391f21' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%233b2123' y='30' width='11' height='11'/%3E%3Crect fill='%233e2324' x='40' width='11' height='11'/%3E%3Crect fill='%23402625' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23422827' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23452a28' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23472c2a' y='40' width='11' height='11'/%3E%3Crect fill='%23492e2b' x='50' width='11' height='11'/%3E%3Crect fill='%234c302d' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%234e332e' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23503530' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23533731' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23553932' y='50' width='11' height='11'/%3E%3Crect fill='%23573c34' x='60' width='11' height='11'/%3E%3Crect fill='%235a3e35' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%235c4037' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%235e4339' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%2360453a' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%2362473c' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23654a3d' x='70' width='11' height='11'/%3E%3Crect fill='%23674c3f' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23694f40' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%236b5142' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%236d5444' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%236f5645' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23715947' x='80' width='11' height='11'/%3E%3Crect fill='%23745b49' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23765e4b' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%2378604c' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%237a634e' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%237c6650' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%237e6852' x='90' width='11' height='11'/%3E%3Crect fill='%237f6b54' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23816e56' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23837058' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23857359' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%2387765b' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%2389785e' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%238b7b60' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%238c7e62' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%238e8164' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23908366' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23928668' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%2393896a' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23958c6d' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23978f6f' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23989271' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%239a9474' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%239b9776' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%239d9a79' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%239e9d7b' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23A0A07E' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+#containTable {
+  background-color: rgba(255, 255, 255, 0.514);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#tablaItems,
+#tablaListas,
+#tablaListaItem {
+  background-color: rgba(0, 0, 0, 0.212);
+  color: rgb(10, 10, 10);
+}
+
+#submit,
+#send,
+#submitEdit {
+  display: inline-flex;
+  background: #2b1e1d;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: .3s ease all;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  text-transform: uppercase;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+#submit::after,
+#send::after,
+#submitEdit::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #6e4641;
+  position: absolute;
+  z-index: 1;
+  top: -80px;
+  left: 0;
+  transition: .3s ease-in-out all;
+}
+
+#submit span,
+#send span,
+#submitEdit span  {
+  position: relative;
+  z-index: 2;
+  transition: .3s ease all;
+}
+
+#submit:hover::after,
+#send:hover::after {
+  top: 0;
+}
+
+#circulo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all .02s ease-in-out all;
+}
+
+
+#chat-container {
+  max-width: 600px;
+  margin: 30px auto;
+  border: 1px solid #ddd;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, .5);
+}
+
+#chat-window {
+  padding: 14px 0;
+  border-bottom: 1px solid #e9e9e9;
+  color: #555;
+}
+
+#output {
+  background-color: rgba(0, 0, 0, 0.233);
+  color: #aaa;
+  padding: 14 0;
+  margin: 0 20px;
+  height: 100px;
+  overflow: auto;
+}
+
+#actions p {
+  color: rgb(255, 255, 255);
+  padding: 14 0;
+  margin: 0 20px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+#username,
+#message {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 0;
+  background-color: #eee;
+  display: block;
+  width: 100%;
+}
+
+body::-webkit-scrollbar,
+#output::-webkit-scrollbar,
+#prueba::-webkit-scrollbar,
+#prueba2::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track,
+#output::-webkit-scrollbar-track {
+  background: rgb(77, 32, 26);
+}
+
+body::-webkit-scrollbar-thumb,
+#output::-webkit-scrollbar-thumb,
+#prueba::-webkit-scrollbar-thumb,
+#prueba2::-webkit-scrollbar-thumb  {
+  background-color: rgb(78, 67, 67);
+
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 100%;
+  padding: 1em;
+  background-color: rgb(112, 83, 78);
+  z-index: 2;
+  /* border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em; */
+
+  transform: translateX(1em);
+  transition: .8s transform;
+}
+
+nav:hover,
+nav:focus-within {
+  transform: translateX(100%);
+  border-radius: 0;
+}
+
+#icons {
+  background: rgba(32, 17, 15, 0.623);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#prueba {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 100%;
+  top:20%;
+  padding: 1em;
+  background-color: rgb(112, 83, 78);
+  z-index: 2;
+  
+
+  transform: translateX(10%);
+  transition: .8s transform;
+  overflow: auto;
+  width: 150px;
+  height: 60px;
+}
+
+#prueba:hover,
+#prueba:active,
+#prueba2:hover,
+#prueba2:active{
+  transform: translateX(100%);
+  border-radius: 0;
+}
+
+
+#prueba2 {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 100%;
+  top:32%;
+  padding: 1em;
+  background-color: rgb(112, 83, 78);
+  z-index: 2;
+  
+  transform: translateX(10%);
+  transition: .8s transform;
+  overflow: auto;
+  width: 150px;
+  height: 60px;
+}
+
+#forms{
+  background-color: #040301;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.14'%3E%3Cpolygon fill='%23372a12' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23645028' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%238b7344' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23a7936b' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23b9b09c' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23d1cec8' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23EEEEEE' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}

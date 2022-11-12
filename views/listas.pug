@@ -1,0 +1,36 @@
+extends layout
+
+block scripts
+
+block content
+
+  a(href=`/todo` style="top:5px; left:5px; z-index:100;")
+                    p.btn.btn-dark volver
+
+  div(class="row m-1")
+    div(style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3" id="containTable")
+      table(class="table table-striped table-bordered nowrap hover m-1" style="width:100%" id="tablaListaItem")
+        thead
+          tr
+            th id
+            th titulo lista
+            th titulo tarea
+            th fecha creacion
+            th fecha resolucion
+            th estado lista
+            th borrar tarea
+        tbody    
+          each lista in listas
+            tr 
+              td= lista.id
+              td= lista.titulo
+              td= item.titulo
+              td= lista.fechaCreacion
+              td= lista.fechaResolucion
+              td= lista.estado
+              td
+                form(action=`/todo/listas?_method=PUT`,method="post")
+                  input(type="hidden" name="id" value=`${item.id}`)
+                  input(type="submit" value="Borrar" class="btn btn-danger")
+
+
