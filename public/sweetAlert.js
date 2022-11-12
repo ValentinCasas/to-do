@@ -1,10 +1,30 @@
-/* 
-console.log("ddddddddddddddddddddddddddddddddddddddddddddddd")
 
-const send = document.querySelector("#send");
+function alertItem() {
+      Swal.fire({
+            title: `Tarea agregada exitosamente!`,
+            position: 'top-end',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+      })
+}
 
-send.addEventListener('click', function () {
-      Swal.fire("fafw")
-});
+function alertLista() {
+      Swal.fire({
+            title: `Lista agregada exitosamente!`,
+            position: 'top-end',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+      })
+}
 
-console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") */
+function alertEnlistar() {
+      Swal.fire({
+            title: `Tarea enlistada exitosamente!`,
+            position: 'top-end',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+      })
+}

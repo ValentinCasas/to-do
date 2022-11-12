@@ -21,12 +21,12 @@ router.post("/signup", todoController.signUp);
 
 
 var isAdmin = async function (req, res, next) {
-
+const Swal = require("sweetalert2");
     const users = await User.findAll({ where: { sessionId: req.sessionID } });
     if (users[0].cargo == "admin") {
         return next();
     } else {
-        res.redirect("/todo")
+        res.redirect("/todo");
     }
 }
 

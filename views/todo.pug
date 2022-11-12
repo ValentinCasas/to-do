@@ -4,8 +4,7 @@ block scripts
 
 block content
 
-    
-  
+
     nav
         a(href=`/auth/logout`).btn.btn-dark.text-light
             i Cerrar sesion
@@ -18,10 +17,10 @@ block content
             p password: #{users[0].password}  
 
     div(id="prueba")
-     p(style="color:#fff;") sin tareas asignadas por el momento
+        p(style="color:#fff;") sin tareas asignadas por el momento
 
     div(id="prueba2")
-     p(style="color:#fff;") nadie resolvio ninguna tarea por el momento
+        p(style="color:#fff;") nadie resolvio ninguna tarea por el momento
 
     div(style="width:100%; height:20px; color:white; margin:-5px; ")
         div(class="text-center")
@@ -65,7 +64,7 @@ block content
                             if user.nombre != users[0].nombre 
                                 option(value=`${user.id}` autofocus) #{user.nombre} 
                 .form-group 
-                    button(id="submit" type="submit") 
+                    button(id="submit" type="submit" onclick="alertItem()") 
                         span Agregar 
 
         div(id="forms" class="col-lg-3 col-md-5 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light m-1")
@@ -86,7 +85,7 @@ block content
                         option(value="sin resolver") SIN RESOLVER 
                         option(value="resuelta") RESUELTA
                 .form-group 
-                    button(id="submit" type="submit") 
+                    button(id="submit" type="submit" onclick="alertLista()") 
                         span Agregar  
 
         div(id="forms" class="col-lg-4 col-md-10 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light  m-1")
@@ -108,7 +107,7 @@ block content
                             option(value=`${lista.id}`) #{lista.titulo}
 
                 .form-group 
-                    button(id="submit" type="submit") 
+                    button(id="submit" type="submit" onclick="alertEnlistar()") 
                         span Agregar  
 
 
