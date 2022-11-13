@@ -4,23 +4,30 @@ block scripts
 
 block content
 
+    a(id="menu" class="text-white mx-4" onclick="abrirMenu()")
+        ion-icon(name="apps" id="apps")
+    a(id="cerrar" onclick="cerrar()" class="text-white mx-4 " )
+        ion-icon(name="close" id="close")
 
-    nav
-        a(href=`/auth/logout`).btn.btn-dark.text-light
-            i Cerrar sesion
-        details(class="mt-2").btn.btn-dark.text-light
-            summary 
-                i Detalles usuario
-            p id: #{users[0].id}
-            p nombre: #{users[0].nombre}
-            p mail: #{users[0].mail}
-            p password: #{users[0].password}  
+    div(id="contain-menu")
+        div(id="box-cards")
+            a(href=`/auth/logout` id="cerrarSesion").btn.btn-dark.text-light
+                i Cerrar sesion
+        div(id="box-cards")
+            details(class="mt-2" id="details").btn.btn-dark.text-light
+                summary 
+                    i Detalles usuario
+                p id: #{users[0].id}
+                p nombre: #{users[0].nombre}
+                p mail: #{users[0].mail}
+        div(id="box-cards")
+            div(id="prueba")
+                p sin tareas asignadas por el momento
+        div(id="box-cards")
+            div(id="prueba2")
+                p nadie resolvio ninguna tarea por el momento              
 
-    div(id="prueba")
-        p(style="color:#fff;") sin tareas asignadas por el momento
 
-    div(id="prueba2")
-        p(style="color:#fff;") nadie resolvio ninguna tarea por el momento
 
     div(style="width:100%; height:20px; color:white; margin:-5px; ")
         div(class="text-center")
@@ -33,7 +40,7 @@ block content
             div(class="text-center")
                 h3 Crear Tarea #{nombre} 
 
-            form(action="/todo" method="post")
+            form(action="/todo" method="post" id="formData")
                 .form-group
                     label Titulo
                     input.form.form-control(type="text" name="titulo" id="titulo" )
@@ -71,7 +78,7 @@ block content
             div(class="text-center")
                 h3 Crear Lista
 
-            form(action="/todo/agregarLista" method="post")
+            form(action="/todo/agregarLista" method="post" id="formData")
                 .form-group
                     label Titulo
                     input.form.form-control(type="text" name="titulo" id="item" )
@@ -92,7 +99,7 @@ block content
             div(class="text-center")
                 h3 Agregar tarea a lista 
 
-            form(action="/todo/enlistar/item" method="post")
+            form(action="/todo/enlistar/item" method="post" id="formData")
 
                 .form-group
                     label Tarea
@@ -112,19 +119,18 @@ block content
 
 
     div(class="row m-1")
-        div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
+        div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-11 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
             div(class="text-center")
                 h3 ITEMS 
             table( class=" table table-striped table-bordered nowrap hover " width="100%" id="tablaItems")
                 thead
                     tr
-                        th id
                         th titulo
                         th creacion
                         th resolucion
+                        th fecha limite
                         th descrip
                         th prioridad
-                        th fecha limite
                         th estado
                         th ver en lista
                         th editar
@@ -132,13 +138,12 @@ block content
                 tbody    
                     each item in items
                         tr 
-                            td= item.id
                             td= item.titulo
                             td= item.fechaCreacion
                             td= item.fechaResolucion
+                            td= item.fechaLimite
                             td= item.descripcion
                             td= item.prioridad
-                            td= item.fechaLimite
                             td= item.estado
                             td
                                 a(href=`todo/titulo/${item.id}/lista`)
@@ -151,13 +156,12 @@ block content
                                     input(type="submit" value="Borrar" class="btn btn-danger")
 
 
-        div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-12 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
+        div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-11 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
             div(class="text-center ")
                 h3 LISTAS
             table(class="table table-striped table-bordered nowrap hover m-1" style="width:100%" id="tablaListas")
                 thead
                     tr
-                        th id
                         th titulo
                         th creacion
                         th resolucion
@@ -168,8 +172,7 @@ block content
                         th borrar
                 tbody    
                     each lista in listas
-                        tr 
-                            td= lista.id
+                        tr
                             td= lista.titulo
                             td= lista.fechaCreacion
                             td= lista.fechaResolucion
