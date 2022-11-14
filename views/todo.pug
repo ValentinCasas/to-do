@@ -5,7 +5,7 @@ block scripts
 block content
 
     a(id="menu" class="text-white mx-4" onclick="abrirMenu()")
-        ion-icon(name="apps" id="apps")
+        ion-icon(name="list" id="apps")
     a(id="cerrar" onclick="cerrar()" class="text-white mx-4 " )
         ion-icon(name="close" id="close")
 
@@ -72,7 +72,7 @@ block content
                                 option(value=`${user.id}` autofocus) #{user.nombre} 
                 .form-group 
                     button(id="submit" type="submit" onclick="alertItem()") 
-                        span Agregar 
+                        span Add 
 
         div(id="forms" class="col-lg-3 col-md-5 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light m-1")
             div(class="text-center")
@@ -93,7 +93,7 @@ block content
                         option(value="resuelta") RESUELTA
                 .form-group 
                     button(id="submit" type="submit" onclick="alertLista()") 
-                        span Agregar  
+                        span Add  
 
         div(id="forms" class="col-lg-4 col-md-10 col-sm-10 col-xs-10 card bg-dark text-white shadow p-5 bg-light  m-1")
             div(class="text-center")
@@ -115,7 +115,9 @@ block content
 
                 .form-group 
                     button(id="submit" type="submit" onclick="alertEnlistar()") 
-                        span Agregar  
+                        span enlist  
+
+
 
 
     div(class="row m-1")
@@ -147,13 +149,13 @@ block content
                             td= item.estado
                             td
                                 a(href=`todo/titulo/${item.id}/lista`)
-                                    p.btn.btn-dark lista
+                                    p.btn.btn-dark list
                             td
                                 a(href=`todo/titulo/${item.id}/editar`)
-                                    p.btn.btn-dark editar          
+                                    p.btn.btn-dark edit          
                             td
                                 form(action=`todo/item/${item.id}?_method=DELETE`,method="post")
-                                    input(type="submit" value="Borrar" class="btn btn-danger")
+                                    input(type="submit" value="Delete" class="btn btn-danger")
 
 
         div( id="containTable" style="width:100%" class="m-4 mx-auto col-lg-11 col-md-11 col-sm-12 col-xs-12 rounded shadow m-1 p-3 ")
@@ -180,13 +182,13 @@ block content
                             td= lista.categoria
                             td
                                 a(href=`todo/${lista.id}/lista`)
-                                    p.btn.btn-dark  entrar
+                                    p.btn.btn-dark  enter
                             td
                                 a(href=`todo/${lista.id}/lista`)
-                                    p.btn.btn-dark editar         
+                                    p.btn.btn-dark edit         
                             td
                                 form(action=`todo/lista/${lista.id}?_method=DELETE`,method="post")
-                                    input(type="submit" value="Borrar" class="btn btn-danger")
+                                    input(type="submit" value="Delete" class="btn btn-danger")
 
 
 
